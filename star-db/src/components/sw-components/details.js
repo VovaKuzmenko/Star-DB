@@ -15,7 +15,6 @@ const {
 } = swapiService;
 
 const PersonDetails = ({ itemId }) => {
-
   return (
     <ItemDetails
       itemId={itemId}
