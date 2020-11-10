@@ -7,7 +7,7 @@ import ErrorBoundry from '../error-boundry';
 
 import { PeoplePage, PlanetsPage, StarshipsPage } from '../pages';
 import { SwapiServiceProvider } from '../swapi-service-context';
-//import ItemDetails, { Record } from "../item-details/item-details";
+
 import SwapiService from "../../services/swapi-service";
 
 import './app.css';
@@ -30,9 +30,16 @@ export default class App extends Component {
               <Header onServiceChange={this.onServiceChange} />
               <RandomPlanet />
 
-              <Route path="/people" component={PeoplePage} />
-              <Route path="/planets" component={PlanetsPage} />
-              <Route path="/starships" component={StarshipsPage} />
+              <Route path="/"
+                     render={() => <h2>Welcome to StarDB</h2>}
+                     exact />
+              <Route path="/people"
+                     render={() => <h2></h2>}
+                     exact />
+              <Route path="/people/" component={PeoplePage} />
+              <Route path="/planets/" component={PlanetsPage} />
+              <Route path="/starships/" exact component={StarshipsPage} />
+              
 
             </div>
           </Router>
@@ -41,3 +48,4 @@ export default class App extends Component {
     );
   }
 }
+
